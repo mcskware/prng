@@ -7,3 +7,6 @@ scoreboard players set #cconst mcprng 28411
 scoreboard players set #temp mcprng 0
 scoreboard players set #value mcprng 0
 scoreboard players set #random mcprng 0
+
+scoreboard players set #maxrand 0
+scoreboard players set #randval 0

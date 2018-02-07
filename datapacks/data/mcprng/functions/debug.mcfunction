@@ -3,17 +3,12 @@
 
 # how to use this datapack
 
-# always call this first to generate a new random number
+# if you want a number between 0 and 15, set #maxrand to 15+1, or 16
+scoreboard players set #maxrand mcprng 16
+
+# now call this to generate a new random number
 function mcprng:nextrand
 
-# now set a scoreboard objective for the top end of your range plus one (the bottom end will be zero)
-scoreboard players set #sixteen mcprng 16
-
-# set a temp variable equal to the new random number, which is #random in the mcprng objective
-scoreboard players operation #value mcprng = #random mcprng
-
-# take modulus of your temp variable with your range
-scoreboard players operation #value mcprng %= #sixteen mcprng
-
-# you now have a random number to play with!
-tellraw @p {"text":"Next random number between 0 and 15 is ","extra":[{"score":{"name":"#value","objective":"mcprng"}}]}
+# the raw random number is stored in #random
+# the value in your specified range is stored in #randval
+tellraw @p {"text":"Next random number between 0 and 15 is ","extra":[{"score":{"name":"#randval","objective":"mcprng"}}]}
